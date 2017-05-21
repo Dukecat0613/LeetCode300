@@ -16,7 +16,7 @@ public class Solution {
             i++;
             num /= 1000;
         }
-        return Word;
+        return Word.trim();
     }
     
     public String dfs(int num) {
