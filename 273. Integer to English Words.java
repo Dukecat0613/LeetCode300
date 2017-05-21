@@ -4,3 +4,30 @@ public class Solution {
     private final String[] THOUSANDS = {"", "Thousand", "Million", "Billion"};
 
     public String numberToWords(int num) {
+        if (num == 0) {
+            return "Zero";
+        }
+        int i = 0;
+        String Word = "";
+        while (num > 0) {
+            if(num % 1000 != 0) {
+                Word = dfs(num % 1000) + THOUSANDS[i] + " " + Word;
+            }
+            i++;
+            num /= 1000;
+        }
+        return Word;
+    }
+    
+    public String dfs(int num) {
+        if (num == 0) {
+            return "";
+        } else if (num < 20) {
+            return LESS_THAN_20[num];
+        } else if (num < 100) {
+            return TENS[num / 10] + " " + dfs(num % 10);
+        } else {
+            return LESS_THAN_20[num / 100] + "Hundred" + dfs(num % 100); 
+        }
+    }
+}
