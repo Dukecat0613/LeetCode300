@@ -3,7 +3,7 @@ public class Solution {
     // Remember the multipy method when we were in primary school
         int n = num1.length();
         int m = num2.length();
-        int[] res = new int[m + n + 1];
+        int[] res = new int[m + n];
         
         for (int i = n - 1; i >= 0; i--) {
             for (int j = m - 1; j >= 0; j--) {
