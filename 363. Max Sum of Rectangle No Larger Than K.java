@@ -14,7 +14,7 @@ public class Solution {
                 }
                 TreeSet<Integer> s = new TreeSet<>();
                 int sum = 0;
-                // critical point
+                // critical point, if we do not add 0 here, maxSum might be always null 
                 s.add(0);
                 for (int j = 0; j < n; j++) {
                     sum += vertical[j];
