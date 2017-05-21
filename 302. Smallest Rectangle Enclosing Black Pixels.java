@@ -22,19 +22,19 @@ public class Solution {
             if(j > top) top = j;
             if(i - 1 >= 0 && image[i - 1][j] == '1' && !visited[i-1][j]) {
             	visited[i - 1][j] = true;
-                queue.offer(new int[]{i - 1,j});
+                queue.offer(new int[]{i - 1, j});
             }
             if(i + 1 < m && image[i + 1][j] == '1' && !visited[i + 1][j]) {
-            	visited[i+1][j] = true;
-                queue.offer(new int[]{i + 1,j});
+            	visited[i + 1][j] = true;
+                queue.offer(new int[]{i + 1, j});
             }
             if(j - 1 >= 0 && image[i][j - 1] == '1' && !visited[i][j - 1]) {
             	visited[i][j - 1] = true;
-                queue.offer(new int[]{i,j - 1});
+                queue.offer(new int[]{i, j - 1});
             }
             if(j + 1 < n && image[i][j + 1]=='1' && !visited[i][j + 1]) {
             	visited[i][j + 1] = true;
-                queue.offer(new int[]{i,j + 1});
+                queue.offer(new int[]{i, j + 1});
             }
         }
         return (top - bottom + 1) * (right - left + 1);
